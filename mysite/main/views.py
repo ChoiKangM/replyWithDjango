@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 # View에 Model(Post 게시글) 가져오기
-from .models import Post, Comment
+from .models import Post
 
 # index.html 페이지를 부르는 index 함수
 def index(request):
@@ -20,16 +20,3 @@ def posting(request, pk):
     post = Post.objects.get(pk=pk)
     # posting.html 페이지를 열 때, 찾아낸 게시글(post)을 같이 가져옵니다 
     return render(request, 'main/posting.html', {'post': post})
-
-
-def comment_create(request, pk):
-    if request.method == 'POST':
-        post = get_object_or_404(Post, pk=pk)
-        contents = request.POST.get('contents')
-        if not contents:
-            return HttpResponse('댓글 내용을 입력하세요', status=400)     
-        Comment.objects.create(
-            post=post,
-            contents=contents
-        )
-        return redirect('post:posting')

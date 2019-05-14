@@ -39,7 +39,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # main 어플리케이션 추가
     'main',
+    # 댓글 기능 추가
+    'disqus',
+    'django.contrib.sites'
 ]
+
+# disqus에서 만든 website name
+DISQUS_WEBSITE_SHORTNAME = 'myReplyinDjango'
+# django site 구별자로 중복되면 안됩니다
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

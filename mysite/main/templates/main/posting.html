@@ -11,6 +11,11 @@
             <img src = "{{ post.mainphoto.url }}" alt="" height="600">
             <br>
         {% endif %}
-        <a href="https://haedal11233.run.goorm.io/blog/">blog</a>
+        <a href="..">blog</a>
+        
+        <!-- disqus로 댓글기능 구현하기 -->
+        <!-- 가독성 높여보자-->
+        {% load disqus_tags %}
+        {% disqus_show_comments %}
     </body>
 </html>
