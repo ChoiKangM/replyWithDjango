@@ -101,7 +101,13 @@ root@goorm:/workspace/djangoBootcamp/mysite# pip3 install Pillow
 ![installInstruction2](img/installInstruction2.png)  
 ![installInstruction3](img/installInstruction3.png)  
 
-`disqus`에서 제공하는 코드를 `posting.html`에 붙입니다
+`disqus`에서 제공하는 코드를 `posting.html`에 붙입니다  
+2가지 종류의 코드를 복사해 `</body>` 바로 위에 붙입니다  
+
+1. `Place the following code where you'd like Disqus to load:`  
+2. `Place the following code before your site's closing </body> tag:`  
+
+
 #### `mysite/main/templates/main/posting.html`
 ```html
 <html>
@@ -228,6 +234,8 @@ root@goorm:/workspace/djangoBootcamp/mysite# python3 manage.py migrate
 ![disqusExamples](img/disqusExamples.png)
 
 
+
+## 직접 댓글 작성하기 참고자료
 [Post,Comment 모델](https://lhy.kr/lecture/django/instagram/02.post-model)
 
 
